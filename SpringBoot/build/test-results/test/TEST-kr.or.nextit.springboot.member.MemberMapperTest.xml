@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kr.or.nextit.springboot.member.MemberMapperTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-05-31T05:23:10" hostname="AN-2.local" time="0.092">
+  <properties/>
+  <testcase name="findMemberById()" classname="kr.or.nextit.springboot.member.MemberMapperTest" time="0.092">
+    <failure message="org.opentest4j.AssertionFailedError: expected: not &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: not &lt;null&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertNotNull.failNull(AssertNotNull.java:49)
+	at app//org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:35)
+	at app//org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:30)
+	at app//org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:304)
+	at app//kr.or.nextit.springboot.member.MemberMapperTest.findMemberById(MemberMapperTest.java:22)
+	at java.base@17.0.9/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.9/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.9/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <system-out><![CDATA[2024-05-31T14:23:09.998+09:00  INFO 77029 --- [SpringBoot] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [kr.or.nextit.springboot.member.MemberMapperTest]: MemberMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-31T14:23:10.003+09:00  INFO 77029 --- [SpringBoot] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration kr.or.nextit.springboot.Application for test class kr.or.nextit.springboot.member.MemberMapperTest
+2024-05-31T14:23:10.006+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.m.MemberMapper.findMemberById    : ==>  Preparing: SELECT ID, NAME, PASSWORD, EMAIL, CREATE_DATE, MODIFY_DATE FROM MEMBER WHERE ID = ?
+2024-05-31T14:23:10.006+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.m.MemberMapper.findMemberById    : ==> Parameters: a001(String)
+2024-05-31T14:23:10.092+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.m.MemberMapper.findMemberById    : <==      Total: 0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

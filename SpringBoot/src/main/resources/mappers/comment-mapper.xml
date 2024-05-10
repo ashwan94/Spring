@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.nextit.springboot.comment.CommentMapper">
+    <select id="selectComment" parameterType="long" resultType="commentVO">
+        SELECT
+            A.ID,
+            A.BOARD_NO,
+            A.WRITER,
+            B.NAME,
+            A.CONTENT,
+            A.CREATE_DATE
+        FROM
+            COMMENTS A
+            LEFT OUTER JOIN MEMBER B ON A.WRITER = B.ID
+        WHERE
+            A.ID = #{id}
+    </select>
+    <insert id="registerComment" parameterType="commentVO" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO
+            COMMENTS
+            (BOARD_NO, WRITER, CONTENT)
+        VALUES
+            (#{boardNo}, #{writer}, #{content})
+    </insert>
+</mapper>

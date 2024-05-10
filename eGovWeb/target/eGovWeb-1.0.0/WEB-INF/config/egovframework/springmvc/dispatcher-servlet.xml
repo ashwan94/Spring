@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <context:component-scan base-package="egovframework">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+
+<!--    json data 에 대해 자동으로 처리하는 방법-->
+<!--    <mvc:annotation-driven/>-->
+<!--    response json 응답 data 를 표현할 수 있게 해줌-->
+<!--    pom.xml 에 jackson-data bind 에 대한 의존성을 추가해줘야 정상 작동-->
+
+
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="webBindingInitializer">
+            <bean class="egovframework.example.cmmn.web.EgovBindingInitializer"/>
+        </property>
+<!--        json data 에 대해 수동으로 처리하는 방법 -->
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+<!--                controller 의 method return type 이 String 에 대한 것들을 전부 처리-->
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+<!--                json data 에 대한 모든 응답을 처리해줌(jackson 등)-->
+                <bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+<!--             첨부파일이 뜨지 않으면 Resource 라는 converter 가 존재하지 않으므로 추가해야함   -->
+            </list>
+        </property>
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="localeChangeInterceptor"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+    <!-- 쿠키를 이용한 Locale 이용시 <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/> -->
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="language"/>
+    </bean>
+
+<!--    모든 Exception 에 대해 자동으로 감지, 처리해줌-->
+<!--    인텔리제이의 console 창에서 error 내용을 절대로 확인할 수 없다-->
+<!--    아래 내용을 주석 처리하면 error 내용 확인 가능 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="defaultErrorView" value="cmmn/egovError"/>
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.dao.DataAccessException">cmmn/dataAccessFailure</prop>
+                <prop key="org.springframework.transaction.TransactionException">cmmn/transactionFailure</prop>
+                <prop key="org.egovframe.rte.fdl.cmmn.exception.EgovBizException">cmmn/egovError</prop>
+                <prop key="org.springframework.security.AccessDeniedException">cmmn/egovError</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+          p:order="1"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp"/>
+
+    <!-- For Pagination Tag -->
+    <bean id="imageRenderer" class="egovframework.example.cmmn.web.EgovImgPaginationRenderer"/>
+
+    <bean id="paginationManager" class="org.egovframe.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationManager">
+        <property name="rendererType">
+            <map>
+                <entry key="image" value-ref="imageRenderer"/>
+            </map>
+        </property>
+    </bean>
+    <!-- /For Pagination Tag -->
+
+    <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>
+
+    <bean class="org.springframework.web.multipart.support.StandardServletMultipartResolver" id="multipartResolver"/>
+
+</beans>

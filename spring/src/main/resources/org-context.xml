@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="passswordService" class="org.example.ChangePasswordService"/>
+    <bean id="memberDao" class="org.example.MemberDao"/>
+    <bean id="infoPrinter" class="org.example.MemberInfoPrinter">
+<!--    생성자로 의존 주입 받을때 <constructor> 사용    -->
+         <constructor-arg ref="memberDao"/>
+         <constructor-arg ref="printer"/>
+    </bean>
+
+    <bean id="summaryPrinter" class="org.example.MemberSummaryPrinter"/>
+    <bean id="printer" class="org.example.MemberPrinter"/>
+    <bean id="memberListPrinter" class="org.example.MemberListPrinter">
+<!--   Setter 로 의존 주입 받을때 <property> 사용     -->
+        <property name="memberDao" ref="memberDao"/>
+        <property name="printer" ref="printer"/>
+    </bean>
+    <bean id="registerService" class="org.example.MemberRegisterService"/>
+    <bean id="versionPrinter" class="org.example.VersionPrinter"/>
+    <context:component-scan base-package="org.example" />
+</beans>

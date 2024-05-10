@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kr.or.nextit.springboot.comment.CommentMapperTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-31T05:23:02" hostname="AN-2.local" time="7.81">
+  <properties/>
+  <testcase name="registerComment()" classname="kr.or.nextit.springboot.comment.CommentMapperTest" time="7.81"/>
+  <system-out><![CDATA[2024-05-31T14:23:02.159+09:00  INFO 77029 --- [SpringBoot] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [kr.or.nextit.springboot.comment.CommentMapperTest]: CommentMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-31T14:23:02.167+09:00  INFO 77029 --- [SpringBoot] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration kr.or.nextit.springboot.Application for test class kr.or.nextit.springboot.comment.CommentMapperTest
+2024-05-31T14:23:02.169+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.c.CommentMapper.registerComment  : ==>  Preparing: INSERT INTO COMMENTS (BOARD_NO, WRITER, CONTENT) VALUES (?, ?, ?)
+2024-05-31T14:23:02.169+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.c.CommentMapper.registerComment  : ==> Parameters: 830(Long), a001(String), 첫 댓글(String)
+2024-05-31T14:23:09.703+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.c.CommentMapper.registerComment  : <==    Updates: 1
+2024-05-31T14:23:09.705+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.c.CommentMapper.selectComment    : ==>  Preparing: SELECT A.ID, A.BOARD_NO, A.WRITER, B.NAME, A.CONTENT, A.CREATE_DATE FROM COMMENTS A LEFT OUTER JOIN MEMBER B ON A.WRITER = B.ID WHERE A.ID = ?
+2024-05-31T14:23:09.707+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.c.CommentMapper.selectComment    : ==> Parameters: 41(Long)
+2024-05-31T14:23:09.783+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.c.CommentMapper.selectComment    : <==      Total: 1
+2024-05-31T14:23:09.783+09:00  INFO 77029 --- [SpringBoot] [    Test worker] k.o.n.s.comment.CommentMapperTest        : comment: CommentVO(id=41, boardNo=830, writer=a001, name=null, content=첫 댓글, createDate=null, modifyDate=null)
+2024-05-31T14:23:09.787+09:00  INFO 77029 --- [SpringBoot] [    Test worker] k.o.n.s.comment.CommentMapperTest        : newComment: CommentVO(id=41, boardNo=830, writer=a001, name=null, content=첫 댓글, createDate=2024-05-31T14:23:09, modifyDate=null)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

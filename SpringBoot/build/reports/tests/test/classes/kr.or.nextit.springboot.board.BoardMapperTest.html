@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - BoardMapperTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>BoardMapperTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/kr.or.nextit.springboot.board.html">kr.or.nextit.springboot.board</a> &gt; BoardMapperTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">3</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">7.876s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">25%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="modifyBoard()"></a>
+<h3 class="failures">modifyBoard()</h3>
+<span class="code">
+<pre>java.lang.NullPointerException: Cannot invoke &quot;kr.or.nextit.springboot.board.BoardVO.getTitle()&quot; because the return value of &quot;kr.or.nextit.springboot.board.BoardMapper.selectBoard(long)&quot; is null
+	at kr.or.nextit.springboot.board.BoardMapperTest.modifyBoard(BoardMapperTest.java:59)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="registerBoard()"></a>
+<h3 class="failures">registerBoard()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;32&gt; but was: &lt;38&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at app//kr.or.nextit.springboot.board.BoardMapperTest.registerBoard(BoardMapperTest.java:45)
+	at java.base@17.0.9/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.9/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.9/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="selectBoards()"></a>
+<h3 class="failures">selectBoards()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;31&gt; but was: &lt;37&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at app//kr.or.nextit.springboot.board.BoardMapperTest.selectBoards(BoardMapperTest.java:30)
+	at java.base@17.0.9/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.9/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.9/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">modifyBoard()</td>
+<td class="failures">2.985s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">registerBoard()</td>
+<td class="failures">4.856s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">selectBoard()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">selectBoards()</td>
+<td class="failures">0.027s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2024-05-31T14:22:54.029+09:00  INFO 77029 --- [SpringBoot] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [kr.or.nextit.springboot.board.BoardMapperTest]: BoardMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-31T14:22:54.037+09:00  INFO 77029 --- [SpringBoot] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration kr.or.nextit.springboot.Application for test class kr.or.nextit.springboot.board.BoardMapperTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.6)
+
+2024-05-31T14:22:54.062+09:00  INFO 77029 --- [SpringBoot] [    Test worker] k.o.n.springboot.board.BoardMapperTest   : Starting BoardMapperTest using Java 17.0.9 with PID 77029 (started by na in /Users/na/workspace/spring/SpringBoot)
+2024-05-31T14:22:54.062+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.springboot.board.BoardMapperTest   : Running with Spring Boot v3.2.6, Spring v6.1.8
+2024-05-31T14:22:54.063+09:00  INFO 77029 --- [SpringBoot] [    Test worker] k.o.n.springboot.board.BoardMapperTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-31T14:22:54.225+09:00  INFO 77029 --- [SpringBoot] [    Test worker] k.o.n.springboot.board.BoardMapperTest   : Started BoardMapperTest in 0.185 seconds (process running for 2.644)
+2024-05-31T14:22:54.232+09:00  INFO 77029 --- [SpringBoot] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-31T14:22:56.192+09:00  INFO 77029 --- [SpringBoot] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@431923ed
+2024-05-31T14:22:56.193+09:00  INFO 77029 --- [SpringBoot] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-31T14:22:56.208+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.registerBoard  : ==&gt;  Preparing: insert into BOARD (WRITER, TITLE, CONTENT) values (?, ?, ?)
+2024-05-31T14:22:56.253+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.registerBoard  : ==&gt; Parameters: a001(String), 테스트 제목(String), 테스트 내용(String)
+2024-05-31T14:22:57.854+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.registerBoard  : &lt;==    Updates: 1
+2024-05-31T14:22:57.859+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoards   : ==&gt;  Preparing: SELECT A.NO, B.NAME WRITER, A.TITLE, A.CONTENT, A.CREATE_DATE, A.MODIFY_DATE, A.HITS, (SELECT COUNT(*) FROM COMMENTS C WHERE C.BOARD_NO = A.NO) COMMENT_SIZE FROM BOARD A LEFT OUTER JOIN MEMBER B ON A.WRITER = B.ID
+2024-05-31T14:22:57.859+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoards   : ==&gt; Parameters: 
+2024-05-31T14:22:59.039+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoards   : &lt;==      Total: 38
+2024-05-31T14:22:59.085+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.modifyBoard    : ==&gt;  Preparing: update board set writer = ?, title = ?, content = ? where no = ?
+2024-05-31T14:22:59.086+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.modifyBoard    : ==&gt; Parameters: 쵸파(String), 테스트 코드(String), 테스트 코드를 실행하여 수정을 진행함(String), 830(Long)
+2024-05-31T14:23:02.049+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.modifyBoard    : &lt;==    Updates: 0
+2024-05-31T14:23:02.049+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoard    : ==&gt;  Preparing: SELECT A.NO, B.NAME WRITER, A.TITLE, A.CONTENT, A.CREATE_DATE, A.MODIFY_DATE, A.HITS FROM BOARD A LEFT OUTER JOIN MEMBER B ON A.WRITER = B.ID WHERE NO = ?
+2024-05-31T14:23:02.049+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoard    : ==&gt; Parameters: 830(Long)
+2024-05-31T14:23:02.065+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoard    : &lt;==      Total: 0
+2024-05-31T14:23:02.070+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoard    : ==&gt;  Preparing: SELECT A.NO, B.NAME WRITER, A.TITLE, A.CONTENT, A.CREATE_DATE, A.MODIFY_DATE, A.HITS FROM BOARD A LEFT OUTER JOIN MEMBER B ON A.WRITER = B.ID WHERE NO = ?
+2024-05-31T14:23:02.070+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoard    : ==&gt; Parameters: 804(Long)
+2024-05-31T14:23:02.073+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoard    : &lt;==      Total: 0
+2024-05-31T14:23:02.073+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.springboot.board.BoardMapperTest   : board: null
+2024-05-31T14:23:02.079+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoards   : ==&gt;  Preparing: SELECT A.NO, B.NAME WRITER, A.TITLE, A.CONTENT, A.CREATE_DATE, A.MODIFY_DATE, A.HITS, (SELECT COUNT(*) FROM COMMENTS C WHERE C.BOARD_NO = A.NO) COMMENT_SIZE FROM BOARD A LEFT OUTER JOIN MEMBER B ON A.WRITER = B.ID
+2024-05-31T14:23:02.079+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoards   : ==&gt; Parameters: 
+2024-05-31T14:23:02.094+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.s.board.BoardMapper.selectBoards   : &lt;==      Total: 37
+2024-05-31T14:23:02.095+09:00 DEBUG 77029 --- [SpringBoot] [    Test worker] k.o.n.springboot.board.BoardMapperTest   : boards: [BoardVO(no=126, writer=하나다루, title=스샷, content=gkskdk, createDate=2024-05-20, modifyDate=null, hits=1, commentSize=0, commentList=null, fileList=null), BoardVO(no=128, writer=하나다루, title=스샷 , content=하나둘, createDate=2024-05-20, modifyDate=null, hits=1, commentSize=0, commentList=null, fileList=null), BoardVO(no=135, writer=하나다루, title=하나다루, content=123, createDate=2024-05-20, modifyDate=null, hits=7, commentSize=0, commentList=null, fileList=null), BoardVO(no=136, writer=하나다루, title=ㅏㅇ너라ㅣㅓ, content=ㅏㅣㅓㄷ리ㅏ널12313, createDate=2024-05-20, modifyDate=2024-05-20, hits=18, commentSize=0, commentList=null, fileList=null), BoardVO(no=138, writer=하나다루, title=sdf, content=sd, createDate=2024-05-20, modifyDate=null, hits=5, commentSize=0, commentList=null, fileList=null), BoardVO(no=137, writer=하나다루, title=하나 둘, content=셋넹, createDate=2024-05-20, modifyDate=null, hits=11, commentSize=0, commentList=null, fileList=null), BoardVO(no=129, writer=하나다루, title=스샷, content=고, createDate=2024-05-20, modifyDate=null, hits=1, commentSize=0, commentList=null, fileList=null), BoardVO(no=125, writer=하나다루, title=하나둘, content=123123, createDate=2024-05-20, modifyDate=null, hits=6, commentSize=0, commentList=null, fileList=null), BoardVO(no=130, writer=하나다루, title=하나, content=스샷, createDate=2024-05-20, modifyDate=null, hits=7, commentSize=1, commentList=null, fileList=null), BoardVO(no=131, writer=하나다루, title=하나, content=스샤, createDate=2024-05-20, modifyDate=null, hits=1, commentSize=0, commentList=null, fileList=null), BoardVO(no=132, writer=하나다루, title=하나, content=ㄷ ㄹ, createDate=2024-05-20, modifyDate=null, hits=2, commentSize=0, commentList=null, fileList=null), BoardVO(no=124, writer=하나다루, title=스샷, content=하나둘, createDate=2024-05-20, modifyDate=null, hits=7, commentSize=4, commentList=null, fileList=null), BoardVO(no=122, writer=하나다루, title=스샷 첨부, content=하빈다, createDate=2024-05-20, modifyDate=null, hits=10, commentSize=1, commentList=null, fileList=null), BoardVO(no=123, writer=하나다루, title=스샷, content=받아라, createDate=2024-05-20, modifyDate=null, hits=1, commentSize=0, commentList=null, fileList=null), BoardVO(no=134, writer=하나다루, title=파일 첨부 완료, content=1209421, createDate=2024-05-20, modifyDate=null, hits=10, commentSize=1, commentList=null, fileList=null), BoardVO(no=121, writer=하나다루, title=스샷c, content=추가합니다, createDate=2024-05-20, modifyDate=null, hits=11, commentSize=10, commentList=null, fileList=null), BoardVO(no=3, writer=123, title=123, content=123, createDate=2024-04-16, modifyDate=null, hits=5, commentSize=0, commentList=null, fileList=null), BoardVO(no=4, writer=123, title=테스트 하나둘, content=1414, createDate=2024-04-16, modifyDate=2024-04-17, hits=7, commentSize=0, commentList=null, fileList=null), BoardVO(no=5, writer=123, title=한다ㅜㄹ, content=23123, createDate=2024-04-16, modifyDate=2024-04-17, hits=1, commentSize=0, commentList=null, fileList=null), BoardVO(no=7, writer=123, title=7번 제목 변경, content=했습니다., createDate=2024-04-16, modifyDate=2024-04-17, hits=19, commentSize=0, commentList=null, fileList=null), BoardVO(no=8, writer=123, title=1, content=223, createDate=2024-04-16, modifyDate=null, hits=2, commentSize=0, commentList=null, fileList=null), BoardVO(no=12, writer=123, title=수프링, content=고인물들의 편의도구일뿐
+그래서 session 에 queryString 을 담았다, createDate=2024-04-16, modifyDate=2024-05-18, hits=34, commentSize=0, commentList=null, fileList=null), BoardVO(no=14, writer=123, title=이제 됐다, content=진짜로?, createDate=2024-04-16, modifyDate=2024-05-18, hits=54, commentSize=0, commentList=null, fileList=null), BoardVO(no=101, writer=null, title=124, content=442, createDate=2024-05-14, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=169, writer=null, title=21, content=3213123, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=162, writer=null, title=sdf, content=asdf, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=163, writer=null, title=123, content=123, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=166, writer=null, title=오늘, content=123, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=167, writer=null, title=123123, content=1231231, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=161, writer=null, title=123, content=123, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=102, writer=null, title=123, content=22, createDate=2024-05-15, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=164, writer=null, title=sdf, content=sdf, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=165, writer=null, title=테스트, content=하나둘, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=168, writer=null, title=321, content=12, createDate=2024-05-23, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=20, writer=null, title=테스트 하나둘, content=어라 왜 냐용이 하나도 없지용, createDate=2024-04-17, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=19, writer=null, title=테스트 하나둘, content=수정이 되었나 모르겐여, createDate=2024-04-16, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null), BoardVO(no=21, writer=null, title=테스트 하나둘, content=어라 내용이 왜 하나도없지, createDate=2024-04-17, modifyDate=null, hits=0, commentSize=0, commentList=null, fileList=null)]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at May 31, 2024, 2:23:10 PM</p>
+</div>
+</div>
+</body>
+</html>

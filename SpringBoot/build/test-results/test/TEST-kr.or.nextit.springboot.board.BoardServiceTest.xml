@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kr.or.nextit.springboot.board.BoardServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-05-31T05:23:02" hostname="AN-2.local" time="0.049">
+  <properties/>
+  <testcase name="registerBoard()" classname="kr.or.nextit.springboot.board.BoardServiceTest" time="0.044"/>
+  <testcase name="selectBoard()" classname="kr.or.nextit.springboot.board.BoardServiceTest" time="0.004"/>
+  <system-out><![CDATA[2024-05-31T14:23:02.158+09:00  INFO 77029 --- [SpringBoot] [    Test worker] k.o.n.springboot.board.BoardServiceTest  : board: BoardVO(no=804, writer=a001, title=이미지, content=첨부파일, createDate=2024-05-20, modifyDate=null, hits=30, commentSize=0, commentList=null, fileList=null)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
